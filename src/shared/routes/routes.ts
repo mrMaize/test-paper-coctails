@@ -4,7 +4,7 @@ import { TRoutesMap } from './routes.interfaces';
 export const RoutesMap: TRoutesMap = [
   {
     name: 'coctailPage',
-    path: '/:cocktail',
+    path: '/:cocktailCode',
     component: lazy(
       () => import('../../pages/CoctailPageWrapper/CoctailPageWrapper')
     ),
