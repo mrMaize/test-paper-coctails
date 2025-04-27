@@ -1,23 +1,18 @@
-import { FC, memo, PropsWithChildren, useCallback } from 'react';
+import { FC, ReactElement } from 'react';
 import styles from './Layout.module.scss';
-import { ListView } from '../../shared/components';
-import { CoctailsList } from '../../shared/constants/coctails';
-import { useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
-export const Layout: FC<PropsWithChildren> = memo(({ children }) => {
-  const navigate = useNavigate();
+interface IProps {
+  menu?: ReactElement;
+}
 
-  const handleCocktailClick = useCallback((cocktailName: string) => {
-    navigate(cocktailName);
-  }, []);
-
+export const Layout: FC<IProps> = ({ menu }) => {
   return (
     <div className={styles.layout}>
-      <ListView
-        list={CoctailsList.map((item) => ({ name: item, id: item }))}
-        onClick={handleCocktailClick}
-      />
-      {children}
+      <section>{menu}</section>
+      <section>
+        <Outlet />
+      </section>
     </div>
   );
-});
+};
