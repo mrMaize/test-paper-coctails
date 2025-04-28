@@ -1,0 +1,14 @@
+.wrapper {
+   display: flex;
+   flex-direction: column;
+}
+
+.ingridientRow {
+   display: flex;
+   gap: 20px;
+}
+
+.measureLabel {
+   width: 100px;
+   word-wrap:break-word;
+}

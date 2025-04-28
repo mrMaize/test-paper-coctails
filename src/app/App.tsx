@@ -1,12 +1,14 @@
 import { FC, Suspense } from 'react';
-import { Providers } from './providers/Provideres';
-import { Layout } from '../widgets/Layout/Layout';
 import { Navigate, Route, Routes } from 'react-router-dom';
+
+import { Layout } from '../widgets/Layout/Layout';
 import { NotFound } from '../pages/NotFound/NotFound';
 import { COCTAILS_LIST } from '../shared/constants/coctails';
 import './App.scss';
 import { RoutesMap } from '../shared/routes/routes';
 import { Menu } from '../widgets/Menu/Menu';
+
+import { Providers } from './providers/Provideres';
 
 const START_COCKTAIL_NAME = COCTAILS_LIST[0] ?? '';
 

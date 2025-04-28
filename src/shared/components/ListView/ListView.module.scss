@@ -1,15 +1,14 @@
 .list {
    width: 100px;
-   border: 1px solid;
    height: 100%;
 }
 
 .listItem {
-   width: 100%;
-   padding: 2px 3px;
+   padding: 5px 10px;
    cursor: pointer;
 }
 
 .activeElement {
-   color: red;
+   font-weight: 800;
+   background-color: lightgrey;
 }

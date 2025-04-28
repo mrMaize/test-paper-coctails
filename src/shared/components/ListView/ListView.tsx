@@ -1,5 +1,6 @@
-import { FC, memo, useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import classnames from 'classnames';
+
 import styles from './ListView.module.scss';
 
 interface IProps {
@@ -9,8 +10,8 @@ interface IProps {
   activeElementName?: string;
 }
 
-export const ListView: FC<IProps> = memo(
-  ({ list, className, onClick, activeElementName }) => {
+export const ListView = memo(
+  ({ list, className, onClick, activeElementName }: IProps) => {
     const handleListElementClick = useCallback((name: string) => {
       return () => {
         onClick?.(name);
@@ -34,3 +35,5 @@ export const ListView: FC<IProps> = memo(
     );
   }
 );
+
+ListView.displayName = 'ListViewComponent';

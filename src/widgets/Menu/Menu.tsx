@@ -1,12 +1,15 @@
-import { FC, memo, useCallback } from 'react';
-import { ListView } from '../../shared/components';
+import { memo, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+
+import { ListView } from '../../shared/components';
+
+import styles from './Menu.module.scss';
 
 interface IProps {
   menuElements: string[];
 }
 
-export const Menu: FC<IProps> = memo(({ menuElements }) => {
+export const Menu = memo(({ menuElements }: IProps) => {
   const params = useParams<{ cocktailCode?: string }>();
   const navigate = useNavigate();
 
@@ -24,6 +27,9 @@ export const Menu: FC<IProps> = memo(({ menuElements }) => {
       list={menuElements}
       onClick={handleSelectCocktailFromMenu}
       activeElementName={coctailCodeFromParams}
+      className={styles.menu}
     />
   );
 });
+
+Menu.displayName = 'MenuComponent';
