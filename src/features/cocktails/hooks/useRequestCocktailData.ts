@@ -22,10 +22,14 @@ export const useRequestCocktailData = (
   const [data, setData] = useState<ICocktail[] | undefined>();
 
   useEffect(() => {
-    const loadData = async () => {
-      setLoading(true);
+    if (!params?.disabled && !loading) {
       setData(undefined);
+      setLoading(true);
+    }
+  }, [loading, params?.disabled]);
 
+  useEffect(() => {
+    const loadData = async () => {
       try {
         const cocktailsData = await get<{ drinks: ICocktail[] }>(
           `/api/json/v1/1/search.php?s=${cocktailCode}`
@@ -44,10 +48,10 @@ export const useRequestCocktailData = (
       }
     };
 
-    if (!params?.disabled) {
+    if (!params?.disabled && loading) {
       loadData();
     }
-  }, [params, cocktailCode]);
+  }, [params, cocktailCode, loading]);
 
   return {
     loading,
