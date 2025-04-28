@@ -4,7 +4,6 @@ import importPlugin from 'eslint-plugin-import';
 import prettierPlugin from 'eslint-plugin-prettier';
 import pluginReact from 'eslint-plugin-react';
 import globals from 'globals';
-
 import tseslint from 'typescript-eslint';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 
