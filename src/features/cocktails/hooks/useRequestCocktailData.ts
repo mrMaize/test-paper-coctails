@@ -8,22 +8,23 @@ interface IProps {
 }
 
 interface IParams {
-  onSuccess?: () => void;
+  onSuccess?: (data: ICocktail[]) => void;
   onError?: () => void;
+  disabled?: boolean;
 }
 
 export const useRequestCocktailData = (
-  { cocktailCode }: IProps,
-  { onSuccess, onError }: IParams
+  { cocktailCode = '' }: IProps,
+  params?: IParams
 ) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
-  const [data, setData] = useState<Array<ICocktail>>([]);
+  const [data, setData] = useState<ICocktail[] | undefined>();
 
   useEffect(() => {
     const loadData = async () => {
       setLoading(true);
-      setData([]);
+      setData(undefined);
 
       try {
         const cocktailsData = await get<{ drinks: ICocktail[] }>(
@@ -34,17 +35,19 @@ export const useRequestCocktailData = (
         setLoading(false);
         setError(null);
 
-        onSuccess?.();
+        params?.onSuccess?.(cocktailsData.drinks);
       } catch (error) {
         setError(error as Error);
         setLoading(false);
 
-        onError?.();
+        params?.onError?.();
       }
     };
 
-    loadData();
-  }, [cocktailCode, onError, onSuccess]);
+    if (!params?.disabled) {
+      loadData();
+    }
+  }, [params, cocktailCode]);
 
   return {
     loading,

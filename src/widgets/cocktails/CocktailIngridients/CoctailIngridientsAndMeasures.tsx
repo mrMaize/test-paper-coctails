@@ -45,8 +45,6 @@ export const CoctailIngridientsAndMeasures: FC<IProps> = ({ cocktailInfo }) => {
     );
   }, [cocktailInfo]);
 
-  console.log(cocktailIngridientsAndMeasures);
-
   return (
     <div className={styles.wrapper}>
       {Object.entries(cocktailIngridientsAndMeasures).map(

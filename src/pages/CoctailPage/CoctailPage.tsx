@@ -1,7 +1,7 @@
 import { FC, useCallback } from 'react';
 
-import { useRequestCocktailData } from '../../features/cocktails/hooks/useRequestCocktailData';
 import { CocktailCard } from '../../widgets/cocktails/CocktailCard/CocktailCard';
+import { useCocktailData } from '../../features/cocktails/hooks/useCocktailData';
 
 import styles from './CoctailPage.module.scss';
 
@@ -22,10 +22,11 @@ export const CoctailPage: FC<IProps> = ({ cocktailCode }) => {
     data: cocktailsData,
     loading,
     error,
-  } = useRequestCocktailData(
-    { cocktailCode },
-    { onSuccess: onSuccessLoadCocktailsData, onError: onErrorLoadCocktailsData }
-  );
+  } = useCocktailData({
+    cocktailCode,
+    onSuccess: onSuccessLoadCocktailsData,
+    onError: onErrorLoadCocktailsData,
+  });
 
   if (loading) {
     return <div>Загрузка данных по выбранному коктейлю</div>;
@@ -37,7 +38,7 @@ export const CoctailPage: FC<IProps> = ({ cocktailCode }) => {
 
   return (
     <div className={styles.wrapper}>
-      {cocktailsData.map((coctailInfo) => (
+      {cocktailsData?.map((coctailInfo) => (
         <CocktailCard key={coctailInfo.idDrink} cocktailInfo={coctailInfo} />
       ))}
     </div>
