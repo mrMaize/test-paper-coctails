@@ -1,54 +1,39 @@
-# React + TypeScript + Vite
+# Задача:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Реализовать приложение с выводом данных полученных по API.
+Пример схематичного интерфейса приложения изображен в app_example.png
 
-Currently, two official plugins are available:
+## Исходные данные:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Запрещено использовать любого рода boilerplates
+- Всю информацию запрашиваем по `GET`-запросу?: [https://www.thecocktaildb.com/api/json/v1/1/search.php?s=<cocktail_code>](https://www.thecocktaildb.com/api/json/v1/1/search.php?s=<cocktail_code>)
+- Доступные `cocktail_code?`: `margarita`, `mojito`, `a1`, `kir`
+- Из эндпоинта используем все коктейли относящиеся к одному виду. Например?: эндпоинт возвращает 4 вида `mojito`, на странице с данным коктейлем выводим все 4 вида
 
-## Expanding the ESLint configuration
+## Функциональные требования:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Использовать менеджер состояния для сохранения данных и исключения дублирующих запросов
+- Учесть обработку ошибок, где это необходимо
+- Список кодов (`cocktail_code`) использовать для названия пунктов меню и формирования url-страниц
+- Каждый пункт меню ведет на страницу со своим описанием
+- Активный пункт меню должен быть выделен
+- По умолчанию первый пункт меню, является главной страницей и использует его же урл
+- Переход на url-адрес `"/"`, должен отправлять пользователя на url-первого пункта меню
+- При переходе на несуществующую страницу, показать 404 ошибку в произвольной форме
+- Резиновая верстка интерфейса. Максимальная ширина 1024px, минимальная 360px
+- `lazy-loading` для загрузки изображений
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Нефункциональные требования:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Масштабируемая архитектура. Код должен быть структурирован таким образом, чтобы его можно было легко расширять и модифицировать.
+- Quality Gates (не более 5 штук). Приложение должно содержать набор инструментов необходимых для поддержания качества кода.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Требования по стеку на выбор:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Typescript + vue 2/3, react + state manager
+- webpack, vite
+- eslint, prettier
+- html 5, css 3
+- scss/sass, stylus, less, postCSS
+- Адаптивная верстка (chrome, safari)
+- unit-testing (опционально)
