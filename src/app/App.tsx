@@ -1,6 +1,6 @@
 import { FC, Suspense } from 'react';
 import './App.scss';
-import { Providers, RouterPaths } from '@processes';
+import { Providers, RouterPaths } from '@processes/index';
 
 const App: FC = () => {
   return (

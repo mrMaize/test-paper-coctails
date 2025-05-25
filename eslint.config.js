@@ -14,6 +14,17 @@ export default [
         version: 'detect',
       },
       'import/resolver': {
+        alias: {
+          map: [
+            ['@', path.resolve(__dirname, 'src')],
+            ['@app', path.resolve(__dirname, 'src/app')],
+            ['@features', path.resolve(__dirname, 'src/features')],
+            ['@pages', path.resolve(__dirname, 'src/pages')],
+            ['@processes', path.resolve(__dirname, 'src/processes')],
+            ['@shared', path.resolve(__dirname, 'src/shared')],
+            ['@widgets', path.resolve(__dirname, 'src/widgets')],
+          ],
+        },
         node: {
           extensions: ['.js', '.jsx', '.ts', '.tsx'],
           typescript: {},
