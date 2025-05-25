@@ -6,9 +6,10 @@ import { ICocktail } from '@shared/interfaces/coctails.interfaces';
 import { setCocktailDataByCode } from '@shared/store/cocktails-slice';
 
 import { useRequestCocktailData } from './useRequestCocktailData';
+import { TCoctailCodeType } from '@shared/constants/coctails';
 
 interface IProps {
-  cocktailCode?: string;
+  cocktailCode?: TCoctailCodeType;
   onSuccess?: () => void;
   onError?: () => void;
 }
