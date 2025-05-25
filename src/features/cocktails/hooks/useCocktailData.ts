@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback, useMemo } from 'react';
 
-import { selectCocktailData } from '../../../shared/selectors/cocktailsSelectors';
-import { ICocktail } from '../../../shared/interfaces/coctails.interfaces';
-import { setCocktailDataByCode } from '../../../shared/store/cocktails-slice';
+import { selectCocktailData } from '@shared/selectors/cocktailsSelectors';
+import { ICocktail } from '@shared/interfaces/coctails.interfaces';
+import { setCocktailDataByCode } from '@shared/store/cocktails-slice';
 
 import { useRequestCocktailData } from './useRequestCocktailData';
 

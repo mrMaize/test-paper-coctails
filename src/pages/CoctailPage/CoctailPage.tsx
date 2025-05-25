@@ -1,12 +1,13 @@
 import { FC, useCallback } from 'react';
 
-import { CocktailCard } from '../../widgets/cocktails/CocktailCard/CocktailCard';
-import { useCocktailData } from '../../features/cocktails/hooks/useCocktailData';
+import { CocktailCard } from '@widgets/cocktails/CocktailCard/CocktailCard';
+import { useCocktailData } from '@features/cocktails/hooks/useCocktailData';
 
 import styles from './CoctailPage.module.scss';
+import { TCoctailCodeType } from '@shared/constants/coctails';
 
 interface IProps {
-  cocktailCode?: string;
+  cocktailCode?: TCoctailCodeType;
 }
 
 export const CoctailPage: FC<IProps> = ({ cocktailCode }) => {

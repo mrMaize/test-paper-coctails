@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import { ICocktail } from '../../../shared/interfaces/coctails.interfaces';
-import { get } from '../../../shared/api/apiMethods';
+import { ICocktail } from '@shared/interfaces/coctails.interfaces';
+import { get } from '@shared/api/apiMethods';
+import { TCoctailCodeType } from '@shared/constants/coctails';
 
 interface IProps {
-  cocktailCode?: string;
+  cocktailCode?: TCoctailCodeType;
 }
 
 interface IParams {

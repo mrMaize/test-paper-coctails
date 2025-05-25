@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 import { ICocktail } from '../interfaces/coctails.interfaces';
+import { TCoctailCodeType } from '@shared/constants/coctails';
 
 interface IProfileState {
   [x: string]: ICocktail[] | undefined;
@@ -17,7 +18,7 @@ const cocktailsReducer = createSlice({
       state,
       {
         payload: { cocktailCode, cocktailsData },
-      }: PayloadAction<{ cocktailCode: string; cocktailsData: ICocktail[] }>
+      }: PayloadAction<{ cocktailCode: TCoctailCodeType; cocktailsData: ICocktail[] }>
     ) => {
       state[cocktailCode] = cocktailsData;
     },
