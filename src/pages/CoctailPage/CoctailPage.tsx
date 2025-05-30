@@ -1,6 +1,6 @@
 import { FC, useCallback } from 'react';
 
-import { CocktailCard } from '@widgets/cocktails/CocktailCard/CocktailCard';
+import { CocktailCard } from '@widgets/CocktailCard/CocktailCard';
 import { useCocktailData } from '@features/cocktails/hooks/useCocktailData';
 
 import styles from './CoctailPage.module.scss';

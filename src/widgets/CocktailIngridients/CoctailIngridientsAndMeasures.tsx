@@ -1,6 +1,6 @@
 import { FC, useMemo } from 'react';
 
-import { ICocktail } from '../../../shared/interfaces/coctails.interfaces';
+import { ICocktail } from '@shared/interfaces/coctails.interfaces';
 
 import styles from './CoctailIngridientsAndMeasures.module.scss';
 

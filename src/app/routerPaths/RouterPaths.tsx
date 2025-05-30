@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { NotFound } from '@pages/NotFound/NotFound';
 import { COCTAILS_LIST, START_COCKTAIL_NAME } from '@shared/constants/coctails';
-import { RoutesMap } from '@shared/routes/routes';
+import { RoutesMap } from '@app/routes/routes';
 import { Layout } from '@widgets/Layout/Layout';
 import { Menu } from '@widgets/Menu/Menu';
 

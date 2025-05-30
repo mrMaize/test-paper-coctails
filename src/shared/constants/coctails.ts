@@ -1,5 +1,12 @@
-export const COCTAILS_LIST = ['margarita', 'mojito', 'a1', 'kir'];
+enum ECoctailCodes {
+   MARGARITA = 'margarita',
+   MOJITO = 'mojito',
+   A1 = 'a1',
+   KIR = 'kir'
+}
 
-export const START_COCKTAIL_NAME = COCTAILS_LIST[0] ?? '';
+export const COCTAILS_LIST = [ECoctailCodes.MARGARITA, ECoctailCodes.MOJITO, ECoctailCodes.A1, ECoctailCodes.KIR];
+
+export const START_COCKTAIL_NAME = ECoctailCodes.MARGARITA;
 
 export type TCoctailCodeType = typeof COCTAILS_LIST[number];

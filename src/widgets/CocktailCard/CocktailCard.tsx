@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { CoctailIngridientsAndMeasures } from '../CocktailIngridients/CoctailIngridientsAndMeasures';
-import { ICocktail } from '../../../shared/interfaces/coctails.interfaces';
+import { ICocktail } from '@shared/interfaces/coctails.interfaces';
 
 import styles from './CocktailCard.module.scss';
 

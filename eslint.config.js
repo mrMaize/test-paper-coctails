@@ -6,6 +6,7 @@ import pluginReact from 'eslint-plugin-react';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import noRestrictedPaths from 'eslint-plugin-no-restricted-imports';
 
 export default [
   {
@@ -52,7 +53,8 @@ export default [
     plugins: {
       import: importPlugin, // подключаем плагин import
       prettier: prettierPlugin, // подключаем плагин Prettier
-      'react-hooks': reactHooksPlugin, // подключаем плагин для React Hooks
+      'react-hooks': reactHooksPlugin, // подключаем плагин для React Hooks,
+      noRestrictedPaths: noRestrictedPaths,
     },
   },
   {
@@ -62,6 +64,17 @@ export default [
       'import/named': 'error', // проверка, что все именованные импорты существуют
       'import/default': 'error', // проверка на существование дефолтных импортов
       'import/namespace': 'error', // проверка на корректность namespace импортов
+      "no-restricted-imports": [
+        "error",
+        {
+          "paths": [
+            {
+              "name": "@features",
+              "message": "Avoid direct imports from features. Use only allowed layers."
+            }
+          ]
+        }
+      ],
       'import/no-extraneous-dependencies': [
         'error',
         {
