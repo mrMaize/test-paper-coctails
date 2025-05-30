@@ -1,32 +1,21 @@
-import { FC, useCallback } from 'react';
+import { FC } from 'react';
 
 import { CocktailCard } from '@widgets/CocktailCard/CocktailCard';
 import { useCocktailData } from '@features/cocktails/hooks/useCocktailData';
 
 import styles from './CoctailPage.module.scss';
-import { TCoctailCodeType } from '@shared/constants/coctails';
+import { ECoctailCodes } from '@shared/constants/coctails';
+import { useParams } from 'react-router-dom';
 
-interface IProps {
-  cocktailCode?: TCoctailCodeType;
-}
-
-export const CoctailPage: FC<IProps> = ({ cocktailCode }) => {
-  const onSuccessLoadCocktailsData = useCallback(() => {
-    console.log('cocktails successfully loaded.');
-  }, []);
-
-  const onErrorLoadCocktailsData = useCallback(() => {
-    console.log('error while loading cocktails.');
-  }, []);
+export const CoctailPage: FC = () => {
+  const { code } = useParams<{ code: ECoctailCodes }>();
 
   const {
     data: cocktailsData,
     loading,
     error,
   } = useCocktailData({
-    cocktailCode,
-    onSuccess: onSuccessLoadCocktailsData,
-    onError: onErrorLoadCocktailsData,
+    cocktailCode: code,
   });
 
   if (loading) {

@@ -1,14 +1,17 @@
 import { FC, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { COCTAILS_LIST, TCoctailCodeType } from '@shared/constants/coctails';
+import { COCTAILS_LIST, ECoctailCodes } from '@shared/constants/coctails';
 import { NotFound } from '../NotFound/NotFound';
-import { CoctailPage } from '../CoctailPage/CoctailPage';
+import { CoctailPage } from '../CoctailPage/ui/CoctailPage';
 
 const reservedCoctailsSet = new Set(COCTAILS_LIST);
 
+/**
+ * @deprecated – dont use the component
+ */
 const CoctailPageWrapper: FC = () => {
-  const params = useParams<{ cocktailCode?: TCoctailCodeType }>();
+  const params = useParams<{ cocktailCode?: ECoctailCodes }>();
 
   const coctailNotMatches = useMemo(
     () =>
@@ -21,7 +24,7 @@ const CoctailPageWrapper: FC = () => {
     return <NotFound />;
   }
 
-  return <CoctailPage cocktailCode={params.cocktailCode} />;
+  return <CoctailPage />;
 };
 
 export default CoctailPageWrapper;

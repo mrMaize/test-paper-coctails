@@ -1,0 +1,1 @@
+export {CoctailPage as default} from './ui/CoctailPage';
