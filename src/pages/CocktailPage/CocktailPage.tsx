@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import styles from './CoctailPage.module.scss';
+import styles from './CocktailPage.module.scss';
 import { ECoctailCodes } from '@shared/constants/coctails';
 import { useParams } from 'react-router-dom';
 import { useCocktailData } from '@features/CocktailData';

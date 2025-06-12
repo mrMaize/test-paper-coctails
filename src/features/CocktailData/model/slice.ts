@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { ECoctailCodes } from '@shared/index';
-import { ICocktail } from '@shared/interfaces/cocktails.interfaces';
+import { ECoctailCodes, ICocktail } from '@shared/index';
+
 
 export interface IProfileState {
   [x: string]: ICocktail[] | undefined;

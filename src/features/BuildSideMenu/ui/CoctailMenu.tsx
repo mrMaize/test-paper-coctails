@@ -4,7 +4,7 @@ import styles from './Menu.module.scss';
 
 import { menuItems } from '../config/menuItems';
 
-export const Menu = memo(() => {
+export const CocktailsMenu = memo(() => {
   return (
     <nav className={styles.menu}>
       {menuItems.map(({ code, name }) => (
@@ -20,4 +20,4 @@ export const Menu = memo(() => {
   );
 });
 
-Menu.displayName = 'MenuComponent';
+CocktailsMenu.displayName = 'MenuComponent';

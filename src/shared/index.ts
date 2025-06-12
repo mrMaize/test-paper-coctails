@@ -1,4 +1,4 @@
 export { get } from './api/apiMethods';
-export * as Components from './components';
+export {ListView} from './components';
 export {ECoctailCodes, COCTAILS_LIST, START_COCKTAIL_NAME } from './constants/coctails';
-export * as Interfaces from './interfaces/cocktails.interfaces';
+export type {ICocktail} from './interfaces/cocktails.interfaces';
