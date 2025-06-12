@@ -7,7 +7,7 @@ export const RoutesMap: TRoutesMap = [
     name: 'coctailPage',
     path: '/:cocktailCode',
     component: lazy(
-      () => import('@pages/CoctailPage')
+      () => import('@pages/CocktailPage/CocktailPage')
     ),
   },
 ];

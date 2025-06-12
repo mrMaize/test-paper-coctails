@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 
-
-import { get } from '@shared/api/apiMethods';
 import { ECoctailCodes } from '@shared/constants/coctails';
-import { ICocktail } from '../model/types';
+import { ICocktail } from '@shared/interfaces/cocktails.interfaces';
+import { get } from '@shared/index';
 
 
 interface IProps {

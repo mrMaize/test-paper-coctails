@@ -1,16 +1,11 @@
 import { FC } from 'react';
-
-import { CocktailCard } from '@widgets/CocktailCard/CocktailCard';
-import { useCocktailData } from '@features/CocktailData/hooks/useCocktailData';
-
-
-
-
 import styles from './CoctailPage.module.scss';
 import { ECoctailCodes } from '@shared/constants/coctails';
 import { useParams } from 'react-router-dom';
+import { useCocktailData } from '@features/CocktailData';
+import { CocktailCard } from '@widgets/index';
 
-export const CoctailPage: FC = () => {
+const CoctailPage: FC = () => {
   const { code } = useParams<{ code: ECoctailCodes }>();
 
   const {
@@ -31,9 +26,11 @@ export const CoctailPage: FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      {/* {cocktailsData?.map((coctailInfo) => (
-        <CocktailCard key={coctailInfo.code} cocktailInfo={coctailInfo} />
-      ))} */}
+      {cocktailsData?.map((cocktailInfo) => (
+        <CocktailCard key={cocktailInfo.idDrink} cocktailInfo={cocktailInfo} />
+      ))}
     </div>
   );
 };
+
+export default CoctailPage;
