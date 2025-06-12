@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback, useMemo } from 'react';
 
-import { selectCocktailData } from '@shared/selectors/cocktailsSelectors';
-import { ICocktail } from '@shared/interfaces/coctails.interfaces';
-import { setCocktailDataByCode } from '@shared/store/cocktails-slice';
+import { selectCocktailData } from '@features/CocktailData/selectors/cocktailsSelectors';
 
 import { useRequestCocktailData } from './useRequestCocktailData';
 import { ECoctailCodes } from '@shared/constants/coctails';
+import { setCocktailDataByCode } from '../model/slice';
+import { ICocktail } from '../model/types';
 
 interface IProps {
   cocktailCode?: ECoctailCodes;
@@ -15,7 +15,8 @@ interface IProps {
 }
 
 export const useCocktailData = ({
-  cocktailCode,
+  // todo: check the `code` below
+  cocktailCode = ECoctailCodes.A1,
   onSuccess,
   onError,
 }: IProps) => {

@@ -1,7 +1,10 @@
 import { FC } from 'react';
 
 import { CocktailCard } from '@widgets/CocktailCard/CocktailCard';
-import { useCocktailData } from '@features/cocktails/hooks/useCocktailData';
+import { useCocktailData } from '@features/CocktailData/hooks/useCocktailData';
+
+
+
 
 import styles from './CoctailPage.module.scss';
 import { ECoctailCodes } from '@shared/constants/coctails';
@@ -28,9 +31,9 @@ export const CoctailPage: FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      {cocktailsData?.map((coctailInfo) => (
-        <CocktailCard key={coctailInfo.idDrink} cocktailInfo={coctailInfo} />
-      ))}
+      {/* {cocktailsData?.map((coctailInfo) => (
+        <CocktailCard key={coctailInfo.code} cocktailInfo={coctailInfo} />
+      ))} */}
     </div>
   );
 };

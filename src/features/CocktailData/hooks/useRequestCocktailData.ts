@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import { ICocktail } from '@shared/interfaces/coctails.interfaces';
+
 import { get } from '@shared/api/apiMethods';
-import { TCoctailCodeType } from '@shared/constants/coctails';
+import { ECoctailCodes } from '@shared/constants/coctails';
+import { ICocktail } from '../model/types';
+
 
 interface IProps {
-  cocktailCode?: TCoctailCodeType;
+  cocktailCode?: ECoctailCodes;
 }
 
 interface IParams {
@@ -15,7 +17,7 @@ interface IParams {
 }
 
 export const useRequestCocktailData = (
-  { cocktailCode = '' }: IProps,
+  { cocktailCode = ECoctailCodes.A1 }: IProps,
   params?: IParams
 ) => {
   const [loading, setLoading] = useState(false);
