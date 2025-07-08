@@ -1,4 +1,5 @@
 import { FC, Suspense } from 'react';
+
 import './App.scss';
 import { Providers } from './providers/Provideres';
 import { RouterPaths } from './routerPaths/RouterPaths';

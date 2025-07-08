@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { get, ICocktail, ECoctailCodes } from '@shared/index';
 
-
 interface IProps {
   cocktailCode?: ECoctailCodes;
 }

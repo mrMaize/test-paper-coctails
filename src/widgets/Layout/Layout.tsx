@@ -1,5 +1,5 @@
-import { FC, ReactElement } from 'react';
 import { Outlet } from 'react-router-dom';
+import { FC, ReactElement } from 'react';
 
 import styles from './Layout.module.scss';
 

@@ -1,8 +1,9 @@
 import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from './Menu.module.scss';
 
 import { menuItems } from '../config/menuItems';
+
+import styles from './Menu.module.scss';
 
 export const CocktailsMenu = memo(() => {
   return (

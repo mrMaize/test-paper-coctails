@@ -6,6 +6,7 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
+    "types": [],
     "paths": {
       "@app/*": ["./src/app/*"],
       "@features/*": ["./src/features/*"],

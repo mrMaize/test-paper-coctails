@@ -1,8 +1,9 @@
 import { memo, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ListView } from '@shared/index';
-import styles from './Menu.module.scss';
 import { ECoctailCodes } from '@shared/constants/coctails';
+
+import styles from './Menu.module.scss';
 
 interface IProps {
   menuElements: string[];

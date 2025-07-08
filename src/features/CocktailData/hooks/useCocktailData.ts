@@ -1,13 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback, useMemo } from 'react';
-
 import { selectCocktailData } from '@features/CocktailData/index';
-
-import { useRequestCocktailData } from './useRequestCocktailData';
 import { ECoctailCodes, START_COCKTAIL_NAME } from '@shared/constants/coctails';
-import { setCocktailDataByCode } from '../model/slice';
 import { ICocktail } from '@shared/interfaces/cocktails.interfaces';
 
+import { setCocktailDataByCode } from '../model/slice';
+
+import { useRequestCocktailData } from './useRequestCocktailData';
 
 interface IProps {
   cocktailCode?: ECoctailCodes;

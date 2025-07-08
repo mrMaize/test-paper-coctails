@@ -7,6 +7,11 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import noRestrictedPaths from 'eslint-plugin-no-restricted-imports';
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default [
   {
@@ -64,16 +69,27 @@ export default [
       'import/named': 'error', // проверка, что все именованные импорты существуют
       'import/default': 'error', // проверка на существование дефолтных импортов
       'import/namespace': 'error', // проверка на корректность namespace импортов
-      "no-restricted-imports": [
-        "error",
+      'import/extensions': [
+        'error',
+        'ignorePackages',
         {
-          "paths": [
+          js: 'never',
+          jsx: 'never',
+          ts: 'never',
+          tsx: 'never',
+        },
+      ],
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
             {
-              "name": "@features",
-              "message": "Avoid direct imports from features. Use only allowed layers."
-            }
-          ]
-        }
+              name: '@features',
+              message:
+                'Avoid direct imports from features. Use only allowed layers.',
+            },
+          ],
+        },
       ],
       'import/no-extraneous-dependencies': [
         'error',

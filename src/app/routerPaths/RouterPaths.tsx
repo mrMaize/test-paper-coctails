@@ -1,7 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-
 import { NotFound } from '@pages/NotFound/NotFound';
-
 import { RoutesMap } from '@app/routes/routes';
 import { Menu, Layout } from '@widgets/index';
 import { COCTAILS_LIST, START_COCKTAIL_NAME } from '@shared/index';

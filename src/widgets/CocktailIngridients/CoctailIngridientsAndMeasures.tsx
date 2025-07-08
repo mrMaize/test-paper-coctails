@@ -1,5 +1,4 @@
 import { FC, useMemo } from 'react';
-
 import { ICocktail } from '@shared/interfaces/cocktails.interfaces';
 
 import styles from './CoctailIngridientsAndMeasures.module.scss';

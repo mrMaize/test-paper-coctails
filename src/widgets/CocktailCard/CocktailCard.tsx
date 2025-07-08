@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import styles from './CocktailCard.module.scss';
 import { ICocktail } from '@shared/interfaces/cocktails.interfaces';
 import { CoctailIngridientsAndMeasures } from '@widgets/CocktailIngridients/CoctailIngridientsAndMeasures';
+
+import styles from './CocktailCard.module.scss';
 
 interface IProps {
   cocktailInfo: ICocktail;
